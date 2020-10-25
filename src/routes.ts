@@ -39,9 +39,9 @@ routes.post('/order', OrderController.create);
 // routes.delete('/order/:id', OrderController.delete)
 
 //ORDERITEM ROUTES
-routes.get('/orderitem', OrderController.index);
-routes.get('/orderitem/:id', OrderController.show);
-routes.post('/orderitem', OrderController.create);
+routes.get('/item', OrderController.index);
+routes.get('/item/:id', OrderController.show);
+routes.post('/item', OrderController.create);
 // routes.put('/orderitem/:id', OrderController.update)
 // routes.delete('/orderitem/:id', OrderController.delete)
 

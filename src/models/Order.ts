@@ -28,9 +28,4 @@ export default class Order {
     @Column()
     created_at: String;
 
-    @OneToOne(() => OrderItem, orderDetails => orderDetails.order, {
-        cascade: ['insert', 'update']
-    })
-    @JoinColumn({name: 'order_id'})
-    order_items_id: OrderItem;
 }
