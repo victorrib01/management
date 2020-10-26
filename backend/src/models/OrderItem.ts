@@ -7,7 +7,7 @@ export default class OrderDetail {
     @PrimaryGeneratedColumn('increment')
     id: number;
     
-    @OneToOne(() => Order, order => order.client, {
+    @OneToOne(() => Order, order => order.id, {
         cascade: ['insert', 'update']
     })
     @JoinColumn({name: 'order_id'})

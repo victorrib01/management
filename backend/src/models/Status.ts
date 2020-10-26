@@ -16,5 +16,5 @@ export default class Status {
         cascade: ['insert', 'update']
     })
     @JoinColumn({ name: 'category_id' })
-    order: Order;
+    orders: Order[];
 }

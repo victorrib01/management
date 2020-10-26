@@ -12,7 +12,13 @@ export default {
     async index(req: Request, res: Response) {
         const ordersRepository = getRepository(Order);
 
-        const orders = await ordersRepository.find();
+        const orders = await ordersRepository.find({
+            relations: [
+                'address',
+                'client',
+                'status'
+            ]
+        });
 
         return res.json(orders)
     },
@@ -22,7 +28,13 @@ export default {
 
         const ordersRepository = getRepository(Order);
 
-        const order = await ordersRepository.findOneOrFail(id);
+        const order = await ordersRepository.findOneOrFail(id, {
+            relations: [
+                'address',
+                'client',
+                'status'
+            ]
+        });
 
         return res.json(order)
     },
@@ -55,6 +67,11 @@ export default {
             address,
             created_at,
         }
+
+        // console.log("status",status);
+        console.log("client", client);
+        console.log("address", address);
+
 
         const schema = Yup.object().shape({
             amount: Yup.number().required(),

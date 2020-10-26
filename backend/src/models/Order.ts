@@ -1,8 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne, OneToOne, OneToMany } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 import Address from "./Address";
 //import Product from './Product';
 import Client from './Client';
-import OrderItem from './OrderItem'
 import Status from "./Status";
 
 @Entity('orders')
@@ -13,7 +12,7 @@ export default class Order {
     @Column()
     amount: number;
 
-    @OneToMany(() => Status, status => status.order)
+    @ManyToOne(() => Status, status => status.orders)
     @JoinColumn({name: 'status_id'})
     status: Status;
     
@@ -21,11 +20,10 @@ export default class Order {
     @JoinColumn({name: 'client_id'})
     client : Client;
 
-    @OneToMany(() => Address, address => address.id)
+    @ManyToOne(() => Address, address => address.orders)
     @JoinColumn({name: 'address_id'})
     address: Address;
 
     @Column()
     created_at: String;
-
 }
