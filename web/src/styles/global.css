@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #AEAEAE;
+    background: #1A4A76;
+    width: 100vw;
+    height: 100vh;
+}
+
+body, input, button, textarea {
+    font: 600 18px Nunito, sans-serif;
+}

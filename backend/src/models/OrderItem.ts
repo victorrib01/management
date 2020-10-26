@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToMany, OneToOne} from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToMany, OneToOne, ManyToOne} from "typeorm";
 import Product from './Product';
 import Order from './Order';
 
@@ -7,10 +7,10 @@ export default class OrderDetail {
     @PrimaryGeneratedColumn('increment')
     id: number;
     
-    @OneToOne(() => Order, order => order.id, {
+    @ManyToOne(() => Order, order => order.order_items, {
         cascade: ['insert', 'update']
     })
-    @JoinColumn({name: 'order_id'})
+    @JoinColumn({name: 'order_item_id'})
     order : Order;
 
     @OneToMany(()=> Product, product => product.id)

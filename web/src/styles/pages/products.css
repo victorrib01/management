@@ -1,0 +1,42 @@
+#page-products{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#page-products #title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#page-products #products-dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+#page-products #products-dashboard #button {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    padding: 30px 40px;
+    border: none;
+    background: #FFF;
+    color: #1A4A76;
+    transition: background-color 0.2s;
+}
+
+#page-products #products-dashboard #button:hover{
+    background: #AEAEAE;
+}
+
+#back-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+}

@@ -1,0 +1,69 @@
+#page-create-clients {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#page-create-clients #title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#page-create-clients #create-client {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    height: 55vh;
+}
+
+#create-client #card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 80vw;
+    border-radius: 100px;
+    background: #FFF;
+    overflow-x: hidden; 
+    overflow-y: auto; 
+}
+
+#card form {
+    padding: 50px;
+    width:100%;
+}
+
+#card fieldset {
+    border: 0;
+}
+#card fieldset+fieldset {
+    margin-top: 80px;
+}
+
+#card fieldset legend {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    color: #5C8599;
+    font-weight: 700;
+    border-bottom: 1px solid #D3E2E5;
+    margin-bottom: 70px;
+    padding-bottom: 24px;
+}
+
+#card .input-block label {
+    display: flex;
+    justify-content: center;
+    color: #8FA7B3;
+    margin-bottom: 8px;
+    line-height: 24px;
+}
+#card .input-block input {
+}
+
+#page-create-clients #back-button {
+    margin-top: 2rem;
+}

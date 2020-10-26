@@ -4,6 +4,7 @@ import AddressController from './controllers/AddressController';
 import CategoryController from './controllers/CategoryController';
 import ClientController from './controllers/ClientController';
 import OrderController from './controllers/OrderController';
+import OrderItemController from './controllers/OrderItemController';
 import ProductController from './controllers/ProductController';
 import StatusController from './controllers/StatusController';
 
@@ -39,9 +40,9 @@ routes.post('/order', OrderController.create);
 // routes.delete('/order/:id', OrderController.delete)
 
 //ORDERITEM ROUTES
-routes.get('/item', OrderController.index);
-routes.get('/item/:id', OrderController.show);
-routes.post('/item', OrderController.create);
+routes.get('/item', OrderItemController.index);
+routes.get('/item/:id', OrderItemController.show);
+routes.post('/item', OrderItemController.create);
 // routes.put('/orderitem/:id', OrderController.update)
 // routes.delete('/orderitem/:id', OrderController.delete)
 

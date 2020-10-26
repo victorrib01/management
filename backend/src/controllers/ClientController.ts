@@ -9,7 +9,13 @@ export default {
     async index(req: Request, res: Response) {
         const clientsRepository = getRepository(Client);
 
-        const clients = await clientsRepository.find();
+        const clients = await clientsRepository.find({
+            relations: [
+                'orders',
+                'addresses',
+                'order_items'
+            ]
+        });
 
         return res.json(clients)
     },

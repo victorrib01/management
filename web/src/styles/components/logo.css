@@ -1,0 +1,12 @@
+#logo{
+    padding: 20px;
+    background: #FFF;
+    border-radius: 100px;
+    margin: 3.5rem 3rem 0 3rem;
+}
+#logo h1{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

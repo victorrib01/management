@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
+import Order from '../models/Order';
 
 import OrderItem from '../models/OrderItem'
+import Product from '../models/Product';
 
 export default {
 
@@ -32,16 +34,19 @@ export default {
         } = req.body;
 
         const order_itemRepository = getRepository(OrderItem);
+        const productRepository = getRepository(Product);
+        const orderRepository = getRepository(Order);
+
+        const product = await productRepository.findOneOrFail(product_id);
+        const order = await orderRepository.findOneOrFail(order_id);
 
         const data = {
-            order_id,
-            product_id,
+            order,
+            product,
             quantity
         }
 
         const schema = Yup.object().shape({
-            order_id: Yup.number().required(),
-            product_id: Yup.number().required(),
             quantity: Yup.number().required(),
         });
 

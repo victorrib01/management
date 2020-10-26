@@ -1,0 +1,42 @@
+#component-crud{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#component-crud #title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#component-crud #crud-dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+#component-crud #crud-dashboard #button {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    padding: 30px 40px;
+    border: none;
+    background: #FFF;
+    color: #1A4A76;
+    transition: background-color 0.2s;
+}
+
+#component-crud #crud-dashboard #button:hover{
+    background: #AEAEAE;
+}
+
+#component-crud #back-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 12rem;
+}

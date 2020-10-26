@@ -10,9 +10,7 @@ export default {
     async index(req: Request, res: Response) {
         const productsRepository = getRepository(Product);
 
-        const products = await productsRepository.find({
-            relations: ['orders']
-        });
+        const products = await productsRepository.find();
 
         return res.json(products)
     },
