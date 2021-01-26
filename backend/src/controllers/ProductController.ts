@@ -10,7 +10,11 @@ export default {
     async index(req: Request, res: Response) {
         const productsRepository = getRepository(Product);
 
-        const products = await productsRepository.find();
+        const products = await productsRepository.find({
+            relations: [
+                'category',
+            ]
+        });
 
         return res.json(products)
     },

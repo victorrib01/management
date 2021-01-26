@@ -6,6 +6,7 @@ import Client from '../models/Client';
 
 import Order from '../models/Order'
 import Status from '../models/Status';
+import StatusController from './StatusController';
 
 export default {
 
@@ -16,7 +17,8 @@ export default {
             relations: [
                 'address',
                 'client',
-                'status'
+                'status',
+                'items'
             ]
         });
 

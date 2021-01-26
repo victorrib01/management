@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne, OneToMan
 import Address from './Address';
 import Client from './Client';
 import Status from './Status';
-import OrderItem from './OrderItem'
+import Item from './Item'
 
 @Entity('orders')
 export default class Order {
@@ -24,9 +24,11 @@ export default class Order {
     @JoinColumn({name: 'address_id'})
     address: Address;
 
-    @OneToMany(() =>OrderItem, orderItem => orderItem.order)
-    @JoinColumn({name: 'order_item_id'})
-    order_items: OrderItem[];
+    @OneToMany(() => Item, item => item.order, {
+        cascade: ['insert', 'update']
+    })
+    @JoinColumn({ name: 'order_id' })
+    items: Item[];
 
     @Column()
     created_at: String;

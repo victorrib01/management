@@ -4,7 +4,7 @@ import AddressController from './controllers/AddressController';
 import CategoryController from './controllers/CategoryController';
 import ClientController from './controllers/ClientController';
 import OrderController from './controllers/OrderController';
-import OrderItemController from './controllers/OrderItemController';
+import ItemController from './controllers/ItemController';
 import ProductController from './controllers/ProductController';
 import StatusController from './controllers/StatusController';
 
@@ -12,46 +12,46 @@ import StatusController from './controllers/StatusController';
 const routes = Router();
 
 //ADDRESS ROUTES
-routes.get('/address', AddressController.index);
-routes.get('/address/:id', AddressController.show);
-routes.post('/address', AddressController.create);
-// routes.put('/sale/:id', AddressController.update)
-// routes.delete('/sale/:id', AddressController.delete)
+routes.get('/addresses', AddressController.index);
+routes.get('/addresses/:id', AddressController.show);
+routes.post('/addresses', AddressController.create);
+// routes.put('/addresses/:id', AddressController.update)
+// routes.delete('/addresses/:id', AddressController.delete)
 
 //CATEGORY ROUTES
-routes.get('/category', CategoryController.index);
-routes.get('/category/:id', CategoryController.show);
-routes.post('/category', CategoryController.create);
-// routes.put('/category/:id', CategoryController.update)
-// routes.delete('/category/:id', CategoryController.delete)
+routes.get('/categories', CategoryController.index);
+routes.get('/categories/:id', CategoryController.show);
+routes.post('/categories', CategoryController.create);
+// routes.put('/categories/:id', CategoryController.update)
+// routes.delete('/categories/:id', CategoryController.delete)
 
 //CLIENT ROUTES
-routes.get('/client', ClientController.index);
-routes.get('/client/:id', ClientController.show);
-routes.post('/client', ClientController.create);
-// routes.put('/client/:id', ClientController.update)
-// routes.delete('/client/:id', ClientController.delete)
+routes.get('/clients', ClientController.index);
+routes.get('/clients/:id', ClientController.show);
+routes.post('/clients', ClientController.create);
+routes.put('/clients/:id', ClientController.update)
+routes.delete('/clients/:id', ClientController.delete)
 
 //ORDER ROUTES
-routes.get('/order', OrderController.index);
-routes.get('/order/:id', OrderController.show);
-routes.post('/order', OrderController.create);
-// routes.put('/order/:id', OrderController.update)
-// routes.delete('/order/:id', OrderController.delete)
+routes.get('/orders', OrderController.index);
+routes.get('/orders/:id', OrderController.show);
+routes.post('/orders', OrderController.create);
+// routes.put('/orders/:id', OrderController.update)
+// routes.delete('/orders/:id', OrderController.delete)
 
 //ORDERITEM ROUTES
-routes.get('/item', OrderItemController.index);
-routes.get('/item/:id', OrderItemController.show);
-routes.post('/item', OrderItemController.create);
-// routes.put('/orderitem/:id', OrderController.update)
-// routes.delete('/orderitem/:id', OrderController.delete)
+routes.get('/items', ItemController.index);
+routes.get('/items/:id', ItemController.show);
+routes.post('/items', ItemController.create);
+// routes.put('/items/:id', ItemController.update)
+// routes.delete('/items/:id', ItemController.delete)
 
 //PRODUCT ROUTES
-routes.get('/product', ProductController.index);
-routes.get('/product/:id', ProductController.show);
-routes.post('/product', ProductController.create);
-// routes.put('/product/:id', ProductController.update)
-// routes.delete('/product/:id', ProductController.delete)
+routes.get('/products', ProductController.index);
+routes.get('/products/:id', ProductController.show);
+routes.post('/products', ProductController.create);
+// routes.put('/products/:id', ProductController.update)
+// routes.delete('/products/:id', ProductController.delete)
 
 //STATUS ROUTES
 routes.get('/status', StatusController.index);

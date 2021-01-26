@@ -9,7 +9,9 @@ export default {
     async index(req: Request, res: Response) {
         const statusRepository = getRepository(Status);
 
-        const status = await statusRepository.find();
+        const status = await statusRepository.find({
+            relations: ['orders']
+        });
 
         return res.json(status)
     },

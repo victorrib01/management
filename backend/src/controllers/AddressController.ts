@@ -11,7 +11,10 @@ export default {
         const addressRepository = getRepository(Address);
 
         const addresses = await addressRepository.find({
-            relations: ['client']
+            relations: [
+                'client',
+                'orders'
+            ]
         });
 
         return res.json(addresses)
