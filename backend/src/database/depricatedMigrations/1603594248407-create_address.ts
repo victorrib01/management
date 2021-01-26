@@ -41,7 +41,7 @@ export class createAddress1603594248407 implements MigrationInterface {
                 {
                     name: 'client_id',
                     type: 'integer'
-                }
+                },
             ],
             foreignKeys: [
                 {

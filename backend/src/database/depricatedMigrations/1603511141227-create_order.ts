@@ -16,7 +16,7 @@ export class createOrder1603511141227 implements MigrationInterface {
                 },
                 {
                     name: 'amount',
-                    type: 'varchar'
+                    type: 'integer'
                 },
                 {
                     name: 'status_id',
