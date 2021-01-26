@@ -4,12 +4,9 @@ import { FaUsers, FaShoppingCart, FaListAlt } from 'react-icons/fa'
 
 import '../styles/pages/home.css'
 
-import Logo from '../components/Logo';
-
 function Home() {
     return (
         <div id="page-home">
-            <Logo />
             <div id="home-dashboard">
                 <div id="button">
                     <Link to="/clients" className="clients-button">

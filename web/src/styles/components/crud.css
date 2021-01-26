@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 #component-crud #crud-dashboard #button {
@@ -35,8 +35,3 @@
     background: #AEAEAE;
 }
 
-#component-crud #back-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 12rem;
-}

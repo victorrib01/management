@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../../components/Logo';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa'
 
@@ -7,7 +6,6 @@ import { FaArrowLeft } from 'react-icons/fa'
 function Search() {
     return (
         <div id="page-clients">
-            <Logo />
             <div id="title">
                 <h1>Search</h1>
             </div>

@@ -1,47 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { FaTrash, FaEdit, FaShoppingCart, FaMap } from 'react-icons/fa'
-import BackButton from '../../components/BackButton';
-// import ClientList from '../../components/ClientList';
+import BackButton from './BackButton';
 
-import api from '../../services/api'
+import api from '../services/api'
 
-import '../../styles/pages/clients/list.css'
 
-interface Client {
+interface Content {
     id: number
-    name: String;
-    doc: String;
-    phone: String;
-    facebook: String;
-    instagram: String;
 }
 
-function List() {
-    const [clients, setClients] = useState<Client[]>([])
-    const [open, setOpen] = useState(Boolean);
+function List(props: { route: any; columns: any[] }) {
+    const [content, setContent] = useState<Content[]>([])
 
     useEffect(() => {
-        async function loadClients() {
-            const response = await api.get('clients');
-            setClients(response.data);
+        async function loadContent() {
+            const response = await api.get(`${props.route}`);
+            setContent(response.data);
+            console.log(content)
         }
-        loadClients();
-        setOpen(false)
+        loadContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    async function handleDeleteClient(id:any) {
-        try{
-            await api.delete(`clients/${id}`)
+    async function handleDelete(id: any) {
+        try {
+            await api.delete(`${props.route}/${id}`)
 
-            setClients(clients.filter(client => client.id !== id));
+            setContent(content.filter(content => content.id !== id));
             alert('Cliente deletado com sucesso')
         } catch (err) {
             alert('Erro ao deletar o cliente, tente novamente');
         }
     }
-    async function handleEditClient(id:number) {
-        setOpen(true)
-        try{ 
+    async function handleEdit(id: number) {
+        try {
             // await api.put(`clients/${id}`, { 
             //     params: {
             //         name: name,
@@ -50,9 +42,9 @@ function List() {
             //         facebook: facebook,
             //         instagram: instagram
             // }})
-            alert(open)
-        }catch (err) {
-            alert('Erro ao editar o cliente, tente novamente');
+            alert('open')
+        } catch (err) {
+            alert(`Erro ao editar o ${props.route}, tente novamente`);
         }
     }
 
@@ -72,12 +64,12 @@ function List() {
                     <table>
                         <thead>
                             <tr>
-                                <th>ID:</th>
-                                <th>Nome:</th>
-                                <th>CPF:</th>
-                                <th>Telefone:</th>
-                                <th>Facebook:</th>
-                                <th>Instagram:</th>
+                                {props.columns.map(column => {
+                                    return (
+                                        <th key={column.name}>{column.name}:</th>
+                                    )
+                                })
+                                }
                                 <th>Pedidos:</th>
                                 <th>Endereços:</th>
                                 <th>Editar:</th>
@@ -85,15 +77,17 @@ function List() {
                             </tr>
                         </thead>
                         <tbody>
-                            {clients.map(client => {
+                            {content.map(content => {
                                 return (
-                                    <tr key={client.id}>
-                                        <th>{client.id}</th>
-                                        <th>{client.name}</th>
-                                        <th>{client.doc}</th>
-                                        <th>{client.phone}</th>
-                                        <th>{client.facebook}</th>
-                                        <th>{client.instagram}</th>
+                                    <tr key={content.id}>
+                                        {props.columns.map(column => {
+                                            return (
+                                                <th key={column.name}>
+                                                    
+                                                </th>
+                                            )
+                                        })
+                                        }
                                         <th>
                                             <button>
                                                 <FaShoppingCart size={20} color="#1A4A76" />
@@ -105,12 +99,12 @@ function List() {
                                             </button>
                                         </th>
                                         <th>
-                                            <button onClick={()=>handleEditClient(client.id)} type="button">
+                                            <button onClick={() => handleEdit(content.id)} type="button">
                                                 <FaEdit size={20} color="#1A4A76" />
                                             </button>
                                         </th>
                                         <th>
-                                            <button onClick={() => handleDeleteClient(client.id)} type="button">
+                                            <button onClick={() => handleDelete(content.id)} type="button">
                                                 <FaTrash size={20} color="red" />
                                             </button>
                                         </th>

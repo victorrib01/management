@@ -5,12 +5,12 @@ import Home from './pages/Home';
 
 //Clients
 import Clients from './pages/clients/Landing'
-import ClientsCreate from './pages/clients/Create'
+import ClientsCreate from './pages/clients/CreateClient'
 import ClientsList from './pages/clients/List'
 import ClientsSearch from './pages/clients/Search'
-import ClientsDelete from './pages/clients/Delete'
 
 import Orders from './pages/orders/Landing';
+import OrdersList from './pages/orders/List';
 
 import Products from './pages/products/Landing';
 
@@ -24,14 +24,13 @@ function Routes() {
                 <Route path="/clients/create" exact component={ClientsCreate} />
                 <Route path="/clients/list" exact component={ClientsList} />
                 <Route path="/clients/search" exact component={ClientsSearch} />
-                <Route path="/clients/delete" exact component={ClientsDelete} />
 
                 {/* ORDERS ROUTES */}
                 <Route path="/orders" exact component={Orders} />
-                {/* <Route path="/orders/create" exact component={OrdersCreate} />
+                {/* <Route path="/orders/create" exact component={OrdersCreate} /> */}
                 <Route path="/orders/list" exact component={OrdersList} />
-                <Route path="/orders/search" exact component={OrdersSearch} />
-                <Route path="/orders/delete" exact component={OrdersDelete} /> */}
+                {/* <Route path="/orders/search" exact component={OrdersSearch} /> */}
+                {/* <Route path="/orders/delete" exact component={OrdersDelete} /> */}
 
                 {/* PRODUCTS ROUTES */}
                 <Route path="/products" exact component={Products} />
