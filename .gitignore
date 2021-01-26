@@ -1,2 +1,4 @@
 / node_mo
 node_modules
+.env
+*.sqlite
